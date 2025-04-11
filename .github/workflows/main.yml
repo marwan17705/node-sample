@@ -121,7 +121,7 @@ jobs:
           node-version: ${{ matrix.node }}
       
       # [required] ในตัวอย่างนี้เป็นการใช้งาน action ที่เป็น Docker container และมี input parameter เข้าไป
-      - uses: docker://gcr.io/cloud-builders/gradle
-        with:
-          entrypoint: /bin/echo
-          args: The ${{ github.event_name }} event triggered this step.
+      # - uses: docker://gcr.io/cloud-builders/gradle
+      #   with:
+      #     entrypoint: /bin/echo
+      #     args: The ${{ github.event_name }} event triggered this step.
