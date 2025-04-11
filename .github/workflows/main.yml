@@ -1,1 +1,16 @@
-runs-on: self-hosted
+name: CI with Self-hosted Runner
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Say Hello
+        run: echo "Running on my self-hosted runner 🎉"
