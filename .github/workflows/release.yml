@@ -24,7 +24,7 @@ jobs:
 
       - name: check node version
         run: node -v
-      - run: node ./.github/scripts/update-node-red-docker.js
+      - run: node ./.github/scripts/update-node-sample.js
       - name: Show release version
         run: echo "Release version is ${{ env.newVersion  }}"
       - name: Fail if tag already exists
