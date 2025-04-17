@@ -1,5 +1,6 @@
 name: Release Everything
-
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 on:
   workflow_dispatch:
     # inputs:
