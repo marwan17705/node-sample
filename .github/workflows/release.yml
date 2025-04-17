@@ -57,6 +57,19 @@ jobs:
             marwan17705/node-sample:${{ env.newVersion  }}
             marwan17705/node-sample:${{ env.newVersion }}-${{ github.sha }}
 
+      - name: Update version in superapp/package.json
+        run: |
+          cd superapp
+          npm version ${{ env.newVersion }} --no-git-tag-version
+
+      - name: Commit and push updated superapp/package.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add superapp/package.json superapp/package-lock.json || true
+          git commit -m "chore: update version to ${{ env.newVersion }}"
+          git push
+
 # ${{ env.RELEASE }}
       # - name: Login to GitHub Container Registry
       #   uses: docker/login-action@v2
