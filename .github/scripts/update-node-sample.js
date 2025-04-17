@@ -1,5 +1,4 @@
 const fs = require("fs");
-process.exit(0);
 
 const newVersion = require("../../package.json").version;
 
