@@ -9,7 +9,7 @@ on:
         type: string
 jobs:
   print-version:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Show release version
         run: echo "Release version is ${{ github.event.inputs.releaseVersion }}"
