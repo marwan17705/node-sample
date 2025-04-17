@@ -32,6 +32,12 @@ jobs:
       - name: check node version
         run: node -v
       - run: node ./.github/scripts/update-node-sample.js
+      - name: Check newVersion is defined
+        run: |
+          if [ -z "${{ env.newVersion }}" ]; then
+            echo "newVersion is not set. Exiting..."
+            exit 1
+          fi
       # - name: Show release version
       #   run: echo "Release version is ${{ env.newVersion  }}"
       # - name: Fail if tag already exists
