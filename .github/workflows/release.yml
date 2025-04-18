@@ -43,6 +43,13 @@ jobs:
             echo "newVersion is not set. Exiting..."
             exit 1
           fi
+
+      - uses: mukunku/tag-exists-action@v1.6.0
+        id: check-tag
+        with: 
+          tag: ${{ env.newVersion }}
+      - run: echo ${{ env.newVersion }} " exists!"
+        if: steps.check-tag.outputs.exists == 'true' 
       - name: Release snapshot
         id: release-snapshot
         uses: actions/create-release@latest
