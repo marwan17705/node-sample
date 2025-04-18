@@ -51,7 +51,7 @@ jobs:
       - name: Fail if tag already exists
         if: steps.check-tag.outputs.exists == 'true'
         run: |
-          echo "❌ The tag '${{ env.newVersion }}' already exists. Aborting the workflow."
+          echo "❌ The version '${{ env.newVersion }}' already exists. Aborting the workflow."
           exit 1
       - name: Release snapshot
         id: release-snapshot
