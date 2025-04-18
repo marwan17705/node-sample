@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: echo ${{ steps.short-sha.outputs.sha }}
+        run: echo ${{ steps.short-sha.outputs.sha }}
       # - name: Set RELEASE env var from package.json
       #   run: echo RELEASE=$(node --print "require('./package.json').version") >> $newVersion
       - name: who am i
