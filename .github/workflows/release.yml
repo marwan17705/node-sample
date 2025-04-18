@@ -47,7 +47,7 @@ jobs:
         id: release-snapshot
         uses: actions/create-release@latest
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           tag_name: ${{ env.newVersion }}
           release_name: ${{ env.newVersion }}
