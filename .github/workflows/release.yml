@@ -43,6 +43,14 @@ jobs:
             echo "newVersion is not set. Exiting..."
             exit 1
           fi
+      - name: Release snapshot
+        id: release-snapshot
+        uses: actions/create-release@latest
+        with:
+          tag_name: ${{ env.newVersion }}
+          release_name: ${{ env.newVersion }}
+          draft: false
+          prerelease: false
       # - name: Show release version
       #   run: echo "Release version is ${{ env.newVersion  }}"
       # - name: Fail if tag already exists
